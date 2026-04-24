@@ -31,8 +31,9 @@ h1, h2 {
 }
 
 h1 {
-    font-family: 'Great Vibes', cursive;
-    font-size: 4rem;
+    font-family: 'Poppins', sans-serif; /* Kıvrımlı font yerine düz ve modern font */
+    font-size: 3.5rem; /* Düz fontta çok devasa durmaması için boyutu biraz uyarladık */
+    font-weight: 600; /* Yazıyı biraz daha kalın ve tok yaptık */
     margin-bottom: 0.5rem;
 }
 
