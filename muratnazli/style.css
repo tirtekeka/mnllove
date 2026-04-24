@@ -1,3 +1,4 @@
+/* Önceki stillerine ek olarak şunları güncelle/ekle */
 :root {
     --primary-color: #e63946;
     --secondary-color: #f1faee;
@@ -5,88 +6,98 @@
     --text-color: #1d3557;
 }
 
-* { margin: 0; padding: 0; box-sizing: border-box; }
+* { margin: 0; padding: 0; box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
 
 body {
     font-family: 'Poppins', sans-serif;
     background-color: var(--secondary-color);
     color: var(--text-color);
-    line-height: 1.6;
     overflow-x: hidden;
 }
 
-.container { max-width: 1000px; margin: 0 auto; padding: 2rem; text-align: center; }
+/* ŞİFRE EKRANI STİLİ */
+#secret-door {
+    position: fixed;
+    top: 0; left: 0; width: 100%; height: 100%;
+    background-color: white;
+    z-index: 10000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: transform 1s ease-in-out;
+}
 
-h1, h2 { color: var(--primary-color); }
-
-h1 {
+.door-content { text-align: center; padding: 20px; }
+.door-content h2 { font-size: 1.5rem; margin-bottom: 20px; }
+#zodiac-input {
+    padding: 12px;
+    border: 2px solid var(--accent-color);
+    border-radius: 20px;
     font-family: 'Poppins', sans-serif;
-    font-size: 3.5rem;
-    font-weight: 600;
-    margin-bottom: 0.5rem;
+    text-align: center;
+    width: 200px;
+    margin-bottom: 10px;
 }
-
-h2 { font-size: 2.2rem; margin-bottom: 2rem; border-bottom: 2px solid var(--accent-color); display: inline-block; padding-bottom: 0.5rem; }
-
-header { background-color: white; padding: 4rem 0; box-shadow: 0 4px 6px rgba(0,0,0,0.05); }
-
-header p {
-    font-size: 1.4rem;
-    color: var(--accent-color);
-    font-weight: 600;
-    letter-spacing: 1px;
-    text-transform: uppercase;
-    margin-top: 10px;
-}
-
-#counter { background-color: var(--accent-color); padding: 4rem 0; color: white; }
-#counter h2 { color: white; border-color: white; }
-#countdown-timer { display: flex; justify-content: center; gap: 1.5rem; flex-wrap: wrap; }
-.time-block { background-color: white; color: var(--primary-color); padding: 1.5rem; border-radius: 15px; box-shadow: 0 4px 10px rgba(0,0,0,0.1); min-width: 120px; }
-.time-block span { font-size: 3rem; font-weight: 600; display: block; }
-.time-block label { font-size: 0.9rem; color: var(--text-color); text-transform: uppercase; font-weight: 400; }
-
-#interactive { padding: 3rem 0; background-color: white; }
-.spotify-container { max-width: 500px; margin: 0 auto 3rem auto; }
-
-.love-reasons { margin-top: 2rem; }
-#love-btn {
+#unlock-btn {
     background-color: var(--primary-color);
-    color: white;
-    border: none;
-    padding: 15px 30px;
-    font-size: 1.2rem;
-    font-family: 'Poppins', sans-serif;
-    border-radius: 30px;
+    color: white; border: none;
+    padding: 10px 25px; border-radius: 20px;
     cursor: pointer;
-    transition: transform 0.2s, background-color 0.2s;
-    box-shadow: 0 4px 15px rgba(230, 57, 70, 0.4);
-}
-#love-btn:hover { transform: scale(1.05); background-color: #d62828; }
-.quote-text { margin-top: 1.5rem; font-size: 1.3rem; font-style: italic; color: var(--text-color); min-height: 40px; }
-
-#message { padding: 4rem 0; background-color: var(--secondary-color); }
-.message-content {
-    max-width: 700px; margin: 0 auto; text-align: left; background-color: white;
-    padding: 2.5rem; border-radius: 20px; border-left: 5px solid var(--primary-color);
-}
-.message-content p { margin-bottom: 1.5rem; font-size: 1.1rem; }
-#typewriter-text { min-height: 80px; border-right: 2px solid var(--primary-color); padding-right: 5px; animation: blink 0.75s step-end infinite; }
-@keyframes blink { 50% { border-color: transparent; } }
-
-.signature { font-size: 1.5rem; color: var(--primary-color); text-align: right; font-weight: 600; }
-footer { background-color: var(--text-color); color: white; padding: 2rem 0; font-size: 0.9rem; }
-
-/* Uçuşan Kalpler Animasyonu */
-#hearts-container { position: fixed; top: 0; left: 0; width: 100%; height: 100%; pointer-events: none; z-index: 9999; }
-.heart { position: absolute; bottom: -5vh; color: #ffb3c1; font-size: 1.5rem; animation: float linear forwards; opacity: 0.7; }
-@keyframes float {
-    0% { transform: translateY(0) rotate(0deg); opacity: 0.7; }
-    100% { transform: translateY(-105vh) rotate(360deg); opacity: 0; }
 }
 
-@media (max-width: 600px) {
-    h1 { font-size: 2.5rem; }
-    .time-block { min-width: 80px; padding: 1rem; }
-    .time-block span { font-size: 2rem; }
+/* ZARFLAR (BUTONLAR) */
+.envelope-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+    margin-top: 20px;
 }
+.env-btn {
+    background-color: white;
+    border: 2px solid var(--accent-color);
+    padding: 15px;
+    border-radius: 15px;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+    color: var(--primary-color);
+    cursor: pointer;
+}
+.note-box {
+    margin-top: 20px;
+    padding: 20px;
+    background-color: var(--accent-color);
+    color: white;
+    border-radius: 15px;
+    font-style: italic;
+    animation: fadeIn 0.5s;
+}
+
+/* DOKUNMA EFEKTİ (KALP PATLAMASI) */
+.tap-heart {
+    position: fixed;
+    pointer-events: none;
+    color: var(--primary-color);
+    font-size: 2rem;
+    z-index: 9999;
+    animation: tapFloat 0.8s ease-out forwards;
+}
+
+@keyframes tapFloat {
+    0% { transform: scale(1); opacity: 1; }
+    100% { transform: scale(2) translateY(-50px); opacity: 0; }
+}
+
+@keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+
+/* Diğer mevcut header, counter, interactive stillerini burada tutabilirsin */
+.container { max-width: 1000px; margin: 0 auto; padding: 2rem; text-align: center; }
+h1 { font-family: 'Poppins', sans-serif; font-size: 3.5rem; font-weight: 600; margin-bottom: 0.5rem; color: var(--primary-color); }
+header p { font-size: 1.4rem; color: var(--accent-color); font-weight: 600; letter-spacing: 1px; text-transform: uppercase; margin-top: 10px; }
+#countdown-timer { display: flex; justify-content: center; gap: 10px; flex-wrap: wrap; }
+.time-block { background-color: white; color: var(--primary-color); padding: 1rem; border-radius: 15px; min-width: 80px; }
+.time-block span { font-size: 2rem; font-weight: 600; display: block; }
+#love-btn { background-color: var(--primary-color); color: white; border: none; padding: 15px 30px; border-radius: 30px; margin-top: 20px; }
+.quote-text { margin-top: 1rem; font-size: 1.1rem; font-style: italic; }
+.message-content { background-color: white; padding: 2rem; border-radius: 20px; border-left: 5px solid var(--primary-color); text-align: left; }
+.signature { text-align: right; color: var(--primary-color); font-weight: 600; }
+footer { padding: 2rem; font-size: 0.8rem; }
