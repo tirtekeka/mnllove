@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Murat❤️Nazlı</title>
+    <title>Murat&Nazlı</title>
     <link rel="stylesheet" href="style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -11,68 +11,93 @@
 </head>
 <body>
 
-    <div id="hearts-container"></div>
-
-    <header>
-        <div class="container">
-            <h1>Murat❤️Nazlı</h1>
-            <p>Sonsuz Bir Aşkın Hikayesi</p>
+    <div id="secret-door">
+        <div class="door-content">
+            <h2>Giriş Yapmak İçin Bilmen Gereken Bir Şey Var...</h2>
+            <p>Sence benim burcum ne? ❤️</p>
+            <input type="text" id="zodiac-input" placeholder="Cevabı yaz...">
+            <button id="unlock-btn">Sürprizi Aç</button>
+            <p id="error-msg" style="display:none; color:#e63946; margin-top:10px;">Yanlış cevap, tekrar dene sevgilim...</p>
         </div>
-    </header>
+    </div>
 
-    <section id="counter">
-        <div class="container">
-            <h2>Birlikte Geçirdiğimiz Süre</h2>
-            <div id="countdown-timer">
-                <div class="time-block">
-                    <span id="days">00</span>
-                    <label>Gün</label>
-                </div>
-                <div class="time-block">
-                    <span id="hours">00</span>
-                    <label>Saat</label>
-                </div>
-                <div class="time-block">
-                    <span id="minutes">00</span>
-                    <label>Dakika</label>
-                </div>
-                <div class="time-block">
-                    <span id="seconds">00</span>
-                    <label>Saniye</label>
+    <div id="main-content" style="opacity: 0; pointer-events: none;">
+        <div id="hearts-container"></div>
+
+        <header>
+            <div class="container">
+                <h1>Murat&Nazlı</h1>
+                <p id="sub-title">Sonsuz Bir Aşkın Hikayesi</p>
+            </div>
+        </header>
+
+        <section id="counter">
+            <div class="container">
+                <h2>Birlikte Geçirdiğimiz Süre</h2>
+                <div id="countdown-timer">
+                    <div class="time-block">
+                        <span id="days">00</span>
+                        <label>Gün</label>
+                    </div>
+                    <div class="time-block">
+                        <span id="hours">00</span>
+                        <label>Saat</label>
+                    </div>
+                    <div class="time-block">
+                        <span id="minutes">00</span>
+                        <label>Dakika</label>
+                    </div>
+                    <div class="time-block">
+                        <span id="seconds">00</span>
+                        <label>Saniye</label>
+                    </div>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <section id="interactive">
-        <div class="container">
-           <div class="spotify-container">
-                <iframe data-testid="embed-iframe" style="border-radius:12px" src="https://open.spotify.com/embed/track/6RnDBMuWq39tX8m1JLAE8w?utm_source=generator" width="100%" height="352" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+        <section id="envelopes">
+            <div class="container">
+                <h2>Şu an nasıl hissediyorsun?</h2>
+                <div class="envelope-grid">
+                    <button class="env-btn" onclick="revealNote('özledim')">Seni Özledim</button>
+                    <button class="env-btn" onclick="revealNote('mutlu')">Çok Mutluyum</button>
+                    <button class="env-btn" onclick="revealNote('yorgun')">Biraz Yorgunum</button>
+                    <button class="env-btn" onclick="revealNote('seviyorum')">Seni Seviyorum</button>
+                </div>
+                <div id="note-display" class="note-box" style="display:none;"></div>
             </div>
+        </section>
 
-            <div class="love-reasons">
-                <button id="love-btn">Seni Seviyorum Çünkü</button>
-                <p id="love-quote" class="quote-text"></p>
+        <section id="interactive">
+            <div class="container">
+                <div class="spotify-container">
+                    <iframe data-testid="embed-iframe" style="border-radius:12px" src="https://open.spotify.com/embed/track/6RnDBMuWq39tX8m1JLAE8w?utm_source=generator" width="100%" height="352" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+                </div>
+
+                <div class="love-reasons">
+                    <button id="love-btn">Seni Seviyorum Çünkü</button>
+                    <p id="love-quote" class="quote-text"></p>
+                </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <section id="message">
-        <div class="container">
-            <h2>Sana Bir Mesajım Var</h2>
-            <div class="message-content">
-                <p>Canım Nazlı,</p>
-                <p id="typewriter-text"></p>
-                <p class="signature">- Murat</p>
+        <section id="message">
+            <div class="container">
+                <h2>Sana Bir Mesajım Var</h2>
+                <div class="message-content">
+                    <p>Canım Nazlı,</p>
+                    <p id="typewriter-text"></p>
+                    <p class="signature">- Murat</p>
+                </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <footer>
-        <div class="container">
-            <p>&copy; 2026 Murat&Nazlı. Tüm Hakları Kalbimizde Saklıdır.</p>
-        </div>
-    </footer>
+        <footer>
+            <div class="container">
+                <p>© 2026 Murat&Nazlı. Tüm Hakları Kalbimizde Saklıdır.</p>
+            </div>
+        </footer>
+    </div>
 
     <script src="script.js"></script>
 </body>
