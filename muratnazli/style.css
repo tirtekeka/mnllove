@@ -1,0 +1,175 @@
+/* Genel Ayarlar */
+:root {
+    --primary-color: #e63946; /* Canlı Kırmızı */
+    --secondary-color: #f1faee; /* Açık Krem/Beyaz */
+    --accent-color: #ffb3c1; /* Hafif Pembe */
+    --text-color: #1d3557; /* Koyu Mavi */
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: var(--secondary-color);
+    color: var(--text-color);
+    line-height: 1.6;
+}
+
+.container {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 2rem;
+    text-align: center;
+}
+
+h1, h2 {
+    color: var(--primary-color);
+}
+
+h1 {
+    font-family: 'Great Vibes', cursive;
+    font-size: 4rem;
+    margin-bottom: 0.5rem;
+}
+
+h2 {
+    font-size: 2.2rem;
+    margin-bottom: 2rem;
+    border-bottom: 2px solid var(--accent-color);
+    display: inline-block;
+    padding-bottom: 0.5rem;
+}
+
+/* Başlık Bölümü */
+header {
+    background-color: white;
+    padding: 4rem 0;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+}
+
+header p {
+    font-size: 1.2rem;
+    color: var(--accent-color);
+    font-weight: 300;
+}
+
+/* Sayaç Bölümü */
+#counter {
+    background-color: var(--accent-color);
+    padding: 4rem 0;
+    color: white;
+}
+
+#counter h2 {
+    color: white;
+    border-color: white;
+}
+
+#countdown-timer {
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+    flex-wrap: wrap;
+}
+
+.time-block {
+    background-color: white;
+    color: var(--primary-color);
+    padding: 1.5rem;
+    border-radius: 15px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    min-width: 120px;
+}
+
+.time-block span {
+    font-size: 3rem;
+    font-weight: 600;
+    display: block;
+}
+
+.time-block label {
+    font-size: 0.9rem;
+    color: var(--text-color);
+    text-transform: uppercase;
+    font-weight: 400;
+}
+
+/* Galeri Bölümü */
+#gallery {
+    padding: 4rem 0;
+}
+
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
+}
+
+.gallery-item {
+    background-color: white;
+    height: 250px;
+    border-radius: 15px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+    overflow: hidden;
+    transition: transform 0.3s ease;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 2px solid var(--accent-color);
+}
+
+.gallery-item:hover {
+    transform: scale(1.05);
+}
+
+.gallery-item.placeholder span {
+    color: var(--accent-color);
+    font-weight: 300;
+}
+
+/* Mesaj Bölümü */
+#message {
+    padding: 4rem 0;
+    background-color: white;
+}
+
+.message-content {
+    max-width: 700px;
+    margin: 0 auto;
+    text-align: left;
+    background-color: var(--secondary-color);
+    padding: 2.5rem;
+    border-radius: 20px;
+    border-left: 5px solid var(--primary-color);
+}
+
+.message-content p {
+    margin-bottom: 1.5rem;
+    font-size: 1.1rem;
+}
+
+.signature {
+    font-family: 'Great Vibes', cursive;
+    font-size: 2rem;
+    color: var(--primary-color);
+    text-align: right;
+}
+
+/* Alt Bilgi Bölümü */
+footer {
+    background-color: var(--text-color);
+    color: white;
+    padding: 2rem 0;
+    font-size: 0.9rem;
+}
+
+/* Mobil Uyumluluk */
+@media (max-width: 600px) {
+    h1 { font-size: 3rem; }
+    .time-block { min-width: 80px; padding: 1rem; }
+    .time-block span { font-size: 2rem; }
+}
