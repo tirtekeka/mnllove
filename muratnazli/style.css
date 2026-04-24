@@ -52,9 +52,12 @@ header {
 }
 
 header p {
-    font-size: 1.2rem;
-    color: var(--accent-color);
-    font-weight: 300;
+    font-size: 1.4rem; /* Yazıyı biraz daha büyüttük */
+    color: var(--accent-color); /* Mevcut pembe rengini koruduk */
+    font-weight: 600; /* Yazıyı kalın (bold) yaparak okunabilirliği artırdık */
+    letter-spacing: 1px; /* Harf aralarını açarak daha ferah bir görünüm sağladık */
+    text-transform: uppercase; /* Tüm harfleri büyük yaparak başlık gibi durmasını sağladık */
+    margin-top: 10px;
 }
 
 /* Sayaç Bölümü */
