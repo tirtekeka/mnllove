@@ -1,6 +1,6 @@
 // İLİŞKİ BAŞLAMA TARİHİ (10.10.2025)
 // Format: "10 10, 2025 HH:MM:SS"
-const startDate = new Date("January 1, 2023 00:00:00").getTime();
+const startDate = new Date("October 10, 2025 00:00:00").getTime();
 
 function updateCountdown() {
     const now = new Date().getTime();
