@@ -1,179 +1,92 @@
-/* Genel Ayarlar */
 :root {
-    --primary-color: #e63946; /* Canlı Kırmızı */
-    --secondary-color: #f1faee; /* Açık Krem/Beyaz */
-    --accent-color: #ffb3c1; /* Hafif Pembe */
-    --text-color: #1d3557; /* Koyu Mavi */
+    --primary-color: #e63946;
+    --secondary-color: #f1faee;
+    --accent-color: #ffb3c1;
+    --text-color: #1d3557;
 }
 
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
+* { margin: 0; padding: 0; box-sizing: border-box; }
 
 body {
     font-family: 'Poppins', sans-serif;
     background-color: var(--secondary-color);
     color: var(--text-color);
     line-height: 1.6;
+    overflow-x: hidden;
 }
 
-.container {
-    max-width: 1000px;
-    margin: 0 auto;
-    padding: 2rem;
-    text-align: center;
-}
+.container { max-width: 1000px; margin: 0 auto; padding: 2rem; text-align: center; }
 
-h1, h2 {
-    color: var(--primary-color);
-}
+h1, h2 { color: var(--primary-color); }
 
 h1 {
-    font-family: 'Poppins', sans-serif; /* Kıvrımlı font yerine düz ve modern font */
-    font-size: 3.5rem; /* Düz fontta çok devasa durmaması için boyutu biraz uyarladık */
-    font-weight: 600; /* Yazıyı biraz daha kalın ve tok yaptık */
+    font-family: 'Poppins', sans-serif;
+    font-size: 3.5rem;
+    font-weight: 600;
     margin-bottom: 0.5rem;
 }
 
-h2 {
-    font-size: 2.2rem;
-    margin-bottom: 2rem;
-    border-bottom: 2px solid var(--accent-color);
-    display: inline-block;
-    padding-bottom: 0.5rem;
-}
+h2 { font-size: 2.2rem; margin-bottom: 2rem; border-bottom: 2px solid var(--accent-color); display: inline-block; padding-bottom: 0.5rem; }
 
-/* Başlık Bölümü */
-header {
-    background-color: white;
-    padding: 4rem 0;
-    box-shadow: 0 4px 6px rgba(0,0,0,0.05);
-}
+header { background-color: white; padding: 4rem 0; box-shadow: 0 4px 6px rgba(0,0,0,0.05); }
 
 header p {
-    font-size: 1.4rem; /* Yazıyı biraz daha büyüttük */
-    color: var(--accent-color); /* Mevcut pembe rengini koruduk */
-    font-weight: 600; /* Yazıyı kalın (bold) yaparak okunabilirliği artırdık */
-    letter-spacing: 1px; /* Harf aralarını açarak daha ferah bir görünüm sağladık */
-    text-transform: uppercase; /* Tüm harfleri büyük yaparak başlık gibi durmasını sağladık */
+    font-size: 1.4rem;
+    color: var(--accent-color);
+    font-weight: 600;
+    letter-spacing: 1px;
+    text-transform: uppercase;
     margin-top: 10px;
 }
 
-/* Sayaç Bölümü */
-#counter {
-    background-color: var(--accent-color);
-    padding: 4rem 0;
+#counter { background-color: var(--accent-color); padding: 4rem 0; color: white; }
+#counter h2 { color: white; border-color: white; }
+#countdown-timer { display: flex; justify-content: center; gap: 1.5rem; flex-wrap: wrap; }
+.time-block { background-color: white; color: var(--primary-color); padding: 1.5rem; border-radius: 15px; box-shadow: 0 4px 10px rgba(0,0,0,0.1); min-width: 120px; }
+.time-block span { font-size: 3rem; font-weight: 600; display: block; }
+.time-block label { font-size: 0.9rem; color: var(--text-color); text-transform: uppercase; font-weight: 400; }
+
+#interactive { padding: 3rem 0; background-color: white; }
+.spotify-container { max-width: 500px; margin: 0 auto 3rem auto; }
+
+.love-reasons { margin-top: 2rem; }
+#love-btn {
+    background-color: var(--primary-color);
     color: white;
+    border: none;
+    padding: 15px 30px;
+    font-size: 1.2rem;
+    font-family: 'Poppins', sans-serif;
+    border-radius: 30px;
+    cursor: pointer;
+    transition: transform 0.2s, background-color 0.2s;
+    box-shadow: 0 4px 15px rgba(230, 57, 70, 0.4);
 }
+#love-btn:hover { transform: scale(1.05); background-color: #d62828; }
+.quote-text { margin-top: 1.5rem; font-size: 1.3rem; font-style: italic; color: var(--text-color); min-height: 40px; }
 
-#counter h2 {
-    color: white;
-    border-color: white;
-}
-
-#countdown-timer {
-    display: flex;
-    justify-content: center;
-    gap: 1.5rem;
-    flex-wrap: wrap;
-}
-
-.time-block {
-    background-color: white;
-    color: var(--primary-color);
-    padding: 1.5rem;
-    border-radius: 15px;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-    min-width: 120px;
-}
-
-.time-block span {
-    font-size: 3rem;
-    font-weight: 600;
-    display: block;
-}
-
-.time-block label {
-    font-size: 0.9rem;
-    color: var(--text-color);
-    text-transform: uppercase;
-    font-weight: 400;
-}
-
-/* Galeri Bölümü */
-#gallery {
-    padding: 4rem 0;
-}
-
-.gallery-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 1.5rem;
-}
-
-.gallery-item {
-    background-color: white;
-    height: 250px;
-    border-radius: 15px;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.05);
-    overflow: hidden;
-    transition: transform 0.3s ease;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border: 2px solid var(--accent-color);
-}
-
-.gallery-item:hover {
-    transform: scale(1.05);
-}
-
-.gallery-item.placeholder span {
-    color: var(--accent-color);
-    font-weight: 300;
-}
-
-/* Mesaj Bölümü */
-#message {
-    padding: 4rem 0;
-    background-color: white;
-}
-
+#message { padding: 4rem 0; background-color: var(--secondary-color); }
 .message-content {
-    max-width: 700px;
-    margin: 0 auto;
-    text-align: left;
-    background-color: var(--secondary-color);
-    padding: 2.5rem;
-    border-radius: 20px;
-    border-left: 5px solid var(--primary-color);
+    max-width: 700px; margin: 0 auto; text-align: left; background-color: white;
+    padding: 2.5rem; border-radius: 20px; border-left: 5px solid var(--primary-color);
+}
+.message-content p { margin-bottom: 1.5rem; font-size: 1.1rem; }
+#typewriter-text { min-height: 80px; border-right: 2px solid var(--primary-color); padding-right: 5px; animation: blink 0.75s step-end infinite; }
+@keyframes blink { 50% { border-color: transparent; } }
+
+.signature { font-size: 1.5rem; color: var(--primary-color); text-align: right; font-weight: 600; }
+footer { background-color: var(--text-color); color: white; padding: 2rem 0; font-size: 0.9rem; }
+
+/* Uçuşan Kalpler Animasyonu */
+#hearts-container { position: fixed; top: 0; left: 0; width: 100%; height: 100%; pointer-events: none; z-index: 9999; }
+.heart { position: absolute; bottom: -5vh; color: #ffb3c1; font-size: 1.5rem; animation: float linear forwards; opacity: 0.7; }
+@keyframes float {
+    0% { transform: translateY(0) rotate(0deg); opacity: 0.7; }
+    100% { transform: translateY(-105vh) rotate(360deg); opacity: 0; }
 }
 
-.message-content p {
-    margin-bottom: 1.5rem;
-    font-size: 1.1rem;
-}
-
-.signature {
-    font-family: 'Great Vibes', cursive;
-    font-size: 2rem;
-    color: var(--primary-color);
-    text-align: right;
-}
-
-/* Alt Bilgi Bölümü */
-footer {
-    background-color: var(--text-color);
-    color: white;
-    padding: 2rem 0;
-    font-size: 0.9rem;
-}
-
-/* Mobil Uyumluluk */
 @media (max-width: 600px) {
-    h1 { font-size: 3rem; }
+    h1 { font-size: 2.5rem; }
     .time-block { min-width: 80px; padding: 1rem; }
     .time-block span { font-size: 2rem; }
 }
